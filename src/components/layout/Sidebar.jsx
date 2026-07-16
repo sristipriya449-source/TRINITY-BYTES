@@ -4,6 +4,7 @@ import {
   GitGraph,
   Lightbulb,
 } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const links = [
   { label: "Overview", path: "/", icon: LayoutDashboard },
@@ -21,22 +22,25 @@ function Sidebar() {
         </p>
 
         <nav className="space-y-1">
-          {links.map((link, index) => {
+          {links.map((link) => {
             const Icon = link.icon;
 
             return (
-              <a
+              <NavLink
                 key={link.label}
-                href={link.path}
-                className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition ${
-                  index === 0
-                    ? "bg-cyan-500/15 text-cyan-300"
-                    : "text-slate-300 hover:bg-slate-800 hover:text-white"
-                }`}
+                to={link.path}
+                end={link.path === "/"}
+                className={({ isActive }) =>
+                  `flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition ${
+                    isActive
+                      ? "bg-cyan-500/15 text-cyan-300"
+                      : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                  }`
+                }
               >
                 <Icon className="h-4 w-4" />
                 {link.label}
-              </a>
+              </NavLink>
             );
           })}
         </nav>

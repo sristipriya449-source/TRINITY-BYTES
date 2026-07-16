@@ -1,10 +1,15 @@
-import React from 'react';
+import {
+  LayoutDashboard,
+  AlertTriangle,
+  GitGraph,
+  Lightbulb,
+} from "lucide-react";
 
 const links = [
-  { label: 'Overview', active: true },
-  { label: 'Incidents' },
-  { label: 'Causal Graph' },
-  { label: 'Insights' },
+  { label: "Overview", path: "/", icon: LayoutDashboard },
+  { label: "Incidents", path: "/incidents", icon: AlertTriangle },
+  { label: "Causal Graph", path: "/causal-graph", icon: GitGraph },
+  { label: "Insights", path: "/insights", icon: Lightbulb },
 ];
 
 function Sidebar() {
@@ -16,19 +21,24 @@ function Sidebar() {
         </p>
 
         <nav className="space-y-1">
-          {links.map((link) => (
-            <a
-              key={link.label}
-              href="#"
-              className={`flex items-center rounded-lg px-3 py-2 text-sm transition ${
-                link.active
-                  ? 'bg-cyan-500/15 text-cyan-300'
-                  : 'text-slate-300 hover:bg-slate-800 hover:text-white'
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link, index) => {
+            const Icon = link.icon;
+
+            return (
+              <a
+                key={link.label}
+                href={link.path}
+                className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition ${
+                  index === 0
+                    ? "bg-cyan-500/15 text-cyan-300"
+                    : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                }`}
+              >
+                <Icon className="h-4 w-4" />
+                {link.label}
+              </a>
+            );
+          })}
         </nav>
       </div>
     </aside>

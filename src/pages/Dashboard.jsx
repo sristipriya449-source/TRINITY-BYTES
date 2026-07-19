@@ -1,5 +1,7 @@
 
 import React from "react";
+import { useDashboard } from "../context/DashboardContext";
+
 
 import AICommandCenter from "../components/dashboard/AICommandCenter";
 import OrganizationMemory from "../components/dashboard/OrganizationMemory";
@@ -10,7 +12,9 @@ import SystemHealth from "../components/dashboard/SystemHealth";
 import LiveActivityFeed from "../components/dashboard/LiveActivityFeed";
 import RiskPredictionChart from "../components/dashboard/RiskPredictionChart";
 import DecisionImpactScore from "../components/dashboard/DecisionImpactScore";
+import AIDecisionFirewall from "../components/dashboard/AIDecisionFirewall";
 import {
+  
   AlertTriangle,
   BrainCircuit,
   ChevronRight,
@@ -19,36 +23,7 @@ import {
   Zap,
 } from "lucide-react";
 
-const metrics = [
-  {
-    title: "Total Incidents",
-    value: "124",
-    change: "+12% vs last month",
-    icon: AlertTriangle,
-    accent: "text-amber-300",
-  },
-  {
-    title: "Failure Patterns Detected",
-    value: "18",
-    change: "6 new this week",
-    icon: BrainCircuit,
-    accent: "text-cyan-300",
-  },
-  {
-    title: "Prevention Score",
-    value: "92%",
-    change: "Above target",
-    icon: ShieldCheck,
-    accent: "text-emerald-300",
-  },
-  {
-    title: "Risk Level",
-    value: "Moderate",
-    change: "Watchlist updated",
-    icon: TrendingUp,
-    accent: "text-violet-300",
-  },
-];
+
 
 const incidents = [
   {
@@ -90,10 +65,45 @@ const insights = [
 ];
 
 function Dashboard() {
+
+  const { stats, decisionData } = useDashboard();
+
+  const metrics = [
+    {
+      title: "Decisions Analyzed",
+      value: stats.decisionsAnalyzed,
+      change: "Updated Live",
+      icon: BrainCircuit,
+      accent: "text-cyan-300",
+    },
+    {
+      title: "AI Confidence",
+      value: decisionData.score + "%",
+      change: "Current Analysis",
+      icon: ShieldCheck,
+      accent: "text-emerald-300",
+    },
+    {
+      title: "Risk Alerts",
+      value: stats.highRiskAlerts,
+      change: "High Risk Decisions",
+      icon: AlertTriangle,
+      accent: "text-amber-300",
+    },
+    {
+      title: "Knowledge Entries",
+      value: stats.knowledgeEntries,
+      change: "Memory Updated",
+      icon: TrendingUp,
+      accent: "text-violet-300",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.12),_transparent_28%),linear-gradient(135deg,_#020617_0%,_#0f172a_100%)] px-4 py-6 text-slate-100 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl space-y-6">
         <AICommandCenter />
+        <AIDecisionFirewall />
 
         <header className="rounded-3xl border border-white/10 bg-slate-900/70 p-6 shadow-2xl shadow-black/20 backdrop-blur">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">

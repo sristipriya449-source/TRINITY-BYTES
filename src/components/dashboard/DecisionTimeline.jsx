@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDashboard } from "../../context/DashboardContext";
 import { motion } from 'framer-motion';
 import { ArrowRightCircle, BrainCircuit, ShieldAlert, Sparkles, TrendingUp } from 'lucide-react';
 
@@ -46,6 +47,7 @@ const events = [
 ];
 
 function DecisionTimeline() {
+   const { timeline } = useDashboard();
   return (
     <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-4 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-6">
       <div className="mb-5">
@@ -56,12 +58,12 @@ function DecisionTimeline() {
       </div>
 
       <div className="space-y-3">
-        {events.map((event, index) => {
-          const Icon = event.icon;
+        {timeline.map((event, index) => {
+          const Icon = BrainCircuit;
 
           return (
             <motion.div
-              key={event.title}
+              key={index}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.25, delay: index * 0.08 }}
@@ -76,12 +78,12 @@ function DecisionTimeline() {
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                     <h3 className="text-sm font-semibold text-white">{event.title}</h3>
-                    <span className={`inline-flex w-fit rounded-full border px-2.5 py-1 text-[11px] font-medium ${event.statusTone}`}>
-                      {event.status}
+                    <span className={`inline-flex w-fit rounded-full border px-2.5 py-1 text-[11px] font-medium $bg-cyan-500/10 text-cyan-300 border-cyan-400/20`}>
+                      Analyzed
                     </span>
                   </div>
 
-                  <p className="mt-2 text-sm text-slate-400">{event.description}</p>
+                  <p className="mt-2 text-sm text-slate-400">Decision analyzed successfully by OrgMind AI.</p>
                   <p className="mt-2 text-xs uppercase tracking-[0.25em] text-slate-500">{event.date}</p>
                 </div>
               </div>

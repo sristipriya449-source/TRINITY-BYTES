@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, TrendingUp, Clock3 } from 'lucide-react';
+import { useDashboard } from "../../context/DashboardContext";
 
 function DecisionImpactScore() {
-  const score = 87;
+  const { decisionData } = useDashboard();
+  const score = decisionData.score;
   const radius = 54;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (score / 100) * circumference;
@@ -54,7 +56,7 @@ function DecisionImpactScore() {
               <ShieldCheck className="h-4 w-4" />
               <p className="text-sm font-semibold">Prevented Failures</p>
             </div>
-            <p className="mt-2 text-2xl font-semibold text-white">34</p>
+            <p className="mt-2 text-2xl font-semibold text-white">{decisionData.failures}</p>
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-3">
@@ -62,7 +64,7 @@ function DecisionImpactScore() {
               <TrendingUp className="h-4 w-4" />
               <p className="text-sm font-semibold">Estimated Cost Saved</p>
             </div>
-            <p className="mt-2 text-2xl font-semibold text-white">$240K</p>
+            <p className="mt-2 text-2xl font-semibold text-white">{decisionData.costSaved}</p>
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-3">
@@ -70,7 +72,7 @@ function DecisionImpactScore() {
               <Clock3 className="h-4 w-4" />
               <p className="text-sm font-semibold">Response Time Improved</p>
             </div>
-            <p className="mt-2 text-2xl font-semibold text-white">42%</p>
+            <p className="mt-2 text-2xl font-semibold text-white">{decisionData.responseImprovement}</p>
           </div>
         </div>
       </div>

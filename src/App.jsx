@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import AppLayout from "./components/layout/AppLayout";
 import LoadingScreen from "./components/common/LoadingScreen";
+import { DashboardProvider } from "./context/DashboardContext";
 
 import Dashboard from "./pages/Dashboard";
 import IncidentExplorer from "./pages/IncidentExplorer";
@@ -22,15 +23,19 @@ function App() {
     return <LoadingScreen />;
   }
 
-  return (
+ return (
+  <DashboardProvider>
     <AppLayout title="OrgMind Nexus">
+
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/incidents" element={<IncidentExplorer />} />
         <Route path="/causal-graph" element={<CausalGraph />} />
       </Routes>
+
     </AppLayout>
-  );
+  </DashboardProvider>
+);
 }
 
 export default App;

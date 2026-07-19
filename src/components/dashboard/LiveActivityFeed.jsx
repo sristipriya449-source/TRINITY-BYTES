@@ -1,73 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useDashboard } from "../../context/DashboardContext";
 import { BrainCircuit, FileText, Sparkles, TrendingUp, AlertTriangle, DatabaseZap } from 'lucide-react';
 
-const initialEvents = [
-  {
-    id: 1,
-    title: 'AI analyzed Incident #124',
-    time: '2 min ago',
-    icon: BrainCircuit,
-    dot: 'bg-cyan-400',
-  },
-  {
-    id: 2,
-    title: 'New meeting notes indexed',
-    time: '5 min ago',
-    icon: FileText,
-    dot: 'bg-emerald-400',
-  },
-  {
-    id: 3,
-    title: 'Risk score updated',
-    time: '8 min ago',
-    icon: TrendingUp,
-    dot: 'bg-violet-400',
-  },
-];
-
-const extraEvents = [
-  {
-    id: 4,
-    title: 'Failure pattern detected',
-    time: '11 min ago',
-    icon: AlertTriangle,
-    dot: 'bg-amber-400',
-  },
-  {
-    id: 5,
-    title: 'Recommendation generated',
-    time: '14 min ago',
-    icon: Sparkles,
-    dot: 'bg-cyan-400',
-  },
-  {
-    id: 6,
-    title: 'Knowledge graph refreshed',
-    time: '18 min ago',
-    icon: DatabaseZap,
-    dot: 'bg-emerald-400',
-  },
-];
 
 function LiveActivityFeed() {
-  const [events, setEvents] = useState(initialEvents);
+  const { timeline } = useDashboard();
 
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setEvents((current) => {
-        const nextEvent = extraEvents[current.length % extraEvents.length];
-        const newEvent = {
-          ...nextEvent,
-          id: Date.now(),
-        };
-
-        return [newEvent, ...current].slice(0, 6);
-      });
-    }, 4500);
-
-    return () => window.clearInterval(timer);
-  }, []);
+  const events = timeline.map((item, index) => ({
+    id: index,
+    title: `AI analyzed: ${item.title}`,
+    time: item.time,
+    icon: BrainCircuit,
+    dot: "bg-cyan-400",
+  }));
 
   return (
     <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-4 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-6">

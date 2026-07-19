@@ -50,10 +50,10 @@ Instead of replacing human decision-making, OrgMind Nexus assists teams by provi
 ![Dashboard](screenshots/01-dashboard.png)
 
 ### 📄 Document Knowledge Extraction
-![Document Analyzer](screenshots/02-document-analysis.png)
+![Document Analyzer](screenshots/02-document-analyzer.png)
 
 ### 🛡️ AI Decision Firewall
-![AI Decision Firewall](screenshots/03-ai-firewall.png)
+![AI Decision Firewall](screenshots/03-ai-decision-firewall.png)
 
 ### 🔗 Causal Failure Graph
 ![Causal Graph](screenshots/04-causal-graph.png)
@@ -61,15 +61,17 @@ Instead of replacing human decision-making, OrgMind Nexus assists teams by provi
 ### ⏳ Decision Timeline
 ![Decision Timeline](screenshots/05-decision-timeline.png)
 
-### 📊 System Health & Live Activity
+### 📊 System Health Monitoring
 ![System Health](screenshots/06-system-health.png)
-### 🧠 Organization Memory
-- Stores analyzed organizational decisions
-- Preserves historical decision context
-- Updates automatically after every analysis
 
----
+### ⚡ Live Activity Feed
+![Live Activity Feed](screenshots/07-livefeed.png)
 
+### 📈 AI Risk Prediction Trend
+![Risk Prediction](screenshots/08-risk-trend.png)
+
+### 🚨 Recent Incidents & AI Insights
+![Recent Incidents](screenshots/09-recent-incidents-ai-insights.png)
 ### 📄 Document Analyzer
 - Upload organizational documents
 - Display document insights

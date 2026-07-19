@@ -211,6 +211,13 @@ M[System Health Monitor] --> B
 
 N[Live Activity Feed] --> B
 
+(three backticks)
+
+It should look like:
+
+```md
+N[Live Activity Feed] --> B
+
 ## 🔄 Project Workflow
 
 The OrgMind Nexus workflow transforms raw organizational data into intelligent insights through multiple stages.
@@ -332,6 +339,13 @@ Follow these steps to run OrgMind Nexus locally.
 ### 1. Clone the Repository
 
 ```bash
+git clone https://github.com/TRINITY-BYTES/OrgMind-Nexus.git
+
+(three backticks)
+
+It should become:
+
+```md
 git clone https://github.com/TRINITY-BYTES/OrgMind-Nexus.git
 
 ## 🚀 Future Enhancements & Roadmap

@@ -210,12 +210,15 @@ L[Decision Timeline] --> F
 M[System Health Monitor] --> B
 
 N[Live Activity Feed] --> B
+```md
 
 
 
 
 
-## 🔄 Project Workflow
+
+
+##🔄 Project Workflow
 
 The OrgMind Nexus workflow transforms raw organizational data into intelligent insights through multiple stages.
 

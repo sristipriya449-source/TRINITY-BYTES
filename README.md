@@ -211,55 +211,9 @@ M[System Health Monitor] --> B
 
 N[Live Activity Feed] --> B
 
-(three backticks)
 
-It should look like:
 
-```md
-N[Live Activity Feed] --> B
 
-## 🔄 Project Workflow
-
-The OrgMind Nexus workflow transforms raw organizational data into intelligent insights through multiple stages.
-
-### 1. 📥 Data Collection
-- Users upload organizational documents such as:
-  - Project reports
-  - Meeting notes
-  - Incident reports
-  - Post-mortems
-
-### 2. 🧩 Knowledge Extraction
-- The Document Analyzer processes uploaded information.
-- Important entities are identified:
-  - Projects
-  - Decisions
-  - Failures
-  - Causes
-  - Lessons learned
-
-### 3. 🧠 Organizational Memory Creation
-- Extracted knowledge is stored as structured organizational memory.
-- Previous experiences become searchable and reusable.
-
-### 4. 🕸️ Knowledge Graph Generation
-- Relationships between events, decisions, and outcomes are visualized.
-- Teams can discover hidden connections between past and present situations.
-
-### 5. 🛡️ Decision Risk Analysis
-- New decisions are analyzed against historical organizational knowledge.
-- The AI Decision Firewall detects similar past failures.
-- Risk warnings and recommendations are generated.
-
-### 6. 📊 Insight Generation
-- Users receive:
-  - Risk predictions
-  - Failure patterns
-  - Decision impact scores
-  - Preventive recommendations
-
-### 7. 📈 Continuous Improvement
-- Every new decision and outcome improves organizational intelligence over time.
 
 ## 🔄 Project Workflow
 
@@ -341,9 +295,7 @@ Follow these steps to run OrgMind Nexus locally.
 ```bash
 git clone https://github.com/TRINITY-BYTES/OrgMind-Nexus.git
 
-(three backticks)
 
-It should become:
 
 ```md
 git clone https://github.com/TRINITY-BYTES/OrgMind-Nexus.git

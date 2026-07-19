@@ -44,7 +44,25 @@ Instead of replacing human decision-making, OrgMind Nexus assists teams by provi
 - Export analysis as a PDF report
 
 ---
+## 📸 Screenshots
 
+### 🧠 AI Organizational Memory Dashboard
+![Dashboard](screenshots/01-dashboard.png)
+
+### 📄 Document Knowledge Extraction
+![Document Analyzer](screenshots/02-document-analysis.png)
+
+### 🛡️ AI Decision Firewall
+![AI Decision Firewall](screenshots/03-ai-firewall.png)
+
+### 🔗 Causal Failure Graph
+![Causal Graph](screenshots/04-causal-graph.png)
+
+### ⏳ Decision Timeline
+![Decision Timeline](screenshots/05-decision-timeline.png)
+
+### 📊 System Health & Live Activity
+![System Health](screenshots/06-system-health.png)
 ### 🧠 Organization Memory
 - Stores analyzed organizational decisions
 - Preserves historical decision context
